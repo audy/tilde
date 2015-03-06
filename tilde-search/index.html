@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>~search</title>
+  </head>
+  <body ng-app="SearchApp">
+
+    <div ng-controller="SearchController" class="container">
+      <h2>~ crawler</h2>
+
+      <form novalidate class="search-form" ng-submit="search(query)">
+        <input type="text" ng-model="query">
+        <input type="button" ng-click="search(query)" value="Search">
+      </form>
+
+      <!-- if there is an error, display its message -->
+      <div ng-if="error" class="alert alert-danger" role="alert">{{ error.message }}</div>
+
+      <!-- if clusterState is available, display it as formatted json -->
+      <div ng-if="resp" class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Results for {{ query }}</h3>
+        </div>
+        <ol>
+          <div ng-repeat="hit in resp.hits.hits" class="panel-body">
+            <li><a ng-href="{{hit._source.uri}}">{{hit._source.title }}</a></li>
+          </div>
+        </ol>
+      </div>
+
+      <!-- include bower components in proper order -->
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/elasticsearch/elasticsearch.angular.js"></script>
+
+      <!-- app code starts here -->
+      <script>
+
+        var SearchApp = angular.module('SearchApp', ['elasticsearch']);
+
+        SearchApp.service('client', function(esFactory) {
+          return esFactory({
+            host: "https://evcufwhlri:ogu3ru8vwz@tilde-3814253334.us-east-1.bonsai.io/tildes",
+            log: "trace"
+          });
+        });
+
+        SearchApp.controller('SearchController', function($scope, client, esFactory) {
+
+          $scope.search = function(query) {
+            client.search({
+              q: query
+            })
+            .then(function (resp) {
+              $scope.resp = resp;
+              $scope.error = null;
+              console.log(resp.hits);
+            })
+          .catch(function (err) {
+              $scope.resp = null;
+              $scope.error = err;
+            });
+          }
+        });
+      </script>
+
+    </div>
+
+  </body>
+</html>
