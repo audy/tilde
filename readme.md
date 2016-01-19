@@ -1,8 +1,9 @@
 # tilde
 
-tilde-releated things
+Things related to (tilde.town)[tilde.town]
 
-- tilde-search: tilde search engine built with node.js, html and elastic search.
+- `tilde-search`: tilde search engine built with node.js, html and elastic search.
+- `public_html`: contents of my public HTML directory
 
 ---
 
