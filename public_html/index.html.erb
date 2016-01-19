@@ -1,0 +1,114 @@
+<%
+  require 'erb'
+%>
+
+<%
+require 'yaml/store'
+require './guestbookentry.rb'
+@guestbook = YAML::Store.new('guestbook.store')
+@guestbook.transaction {
+  @entries = @guestbook['guests']
+}
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>~audy</title>
+<style type="text/css">
+  body {
+    background-color: pink;
+    font-family: courier;
+  }
+</style>
+</head>
+<body>
+
+<pre>
+ /\/
+                   |
+    __,          __|
+   /  |  |   |  /  |  |   |
+   \_/|_/ \_/|_/\_/|_/ \_/|/
+                         /|
+                         \|
+</pre>
+
+  <p>Welcome to my ~ page / Rub{e,y}-Goldberg machine</p>
+
+  <hr/>
+
+  <h3>Pages/Projects</h3>
+  <ul>
+    <li><a href="http://tilde.town/~audy/search">~crawler</a> - tilde search engine</li>
+    <li><a href="code.html">Code</a> - Files found in `/home/*/Code/*`</li>
+    <li><a href="usercounts.txt.gz">usercounts.txt.gz</a> - # of uniq logged in users by minute</li>
+  </ul>
+
+
+<h3>&micro;blog.txt</h3>
+
+<pre>
+<%= `cat microblog.txt` %>
+</pre>
+
+<hr/>
+
+<h3>Guestbook</h3>
+<span>Sign guestbook: <code>nc 127.0.0.1 2345</code> (from tilde.town)</span>
+
+<ul>
+  <% unless @entries.nil? %>
+    <% @entries.reverse.each do |entry| %>
+      <li><%= entry.to_s %></li>
+    <% end %>
+  <% else %>
+      No entries :(
+  <% end %>
+</ul>
+
+<hr/>
+
+ <div id="tilde_ring" style="background-color:pink; text-align:center; border-radius:10px;">
+  <p><em>a member of the tilde.town ~ring</em></p>
+  <p> <a id="tilde_town_ring" class="tilde_ring_link" href="">random ~user</a>
+    | <a id="random_tildebox" class="tilde_ring_link" href="">random ~box</a> </p>
+  <p><a href="http://tilde.town/~um/tilde_ring/join.html">join</a></p>
+  <script type="text/javascript" src="http://tilde.town/~um/js/tilde_ring.js"></script>
+</div>
+
+<hr/>
+
+<p>
+Last Updated: <%= Time.now %> | <a href="http://tilde.town/~audy/index.html.erb" >view source</a>
+</p>
+
+<hr/>
+
+<pre>
+$ shuf ~jumblesale/sonicwisdom/data | head -n 1 | ~/Code/catsay/bin/catsay --cat mini
+
+<%= `shuf ~jumblesale/sonicwisdom/data | head -n 1 | ~/Code/catsay/bin/catsay --cat mini` %>
+
+$ smiles "$(samp)"
+<%= `smiles "$(samp)"` %>
+</pre>
+
+<hr/>
+
+<div class="widget24372835796" data-widget-type="gf_this_site"></div>
+<script type="text/javascript">
+(function() {
+  var ns = document.createElement('script');
+  ns.type = 'text/javascript';
+  ns.async = true;
+  ns.src = 'https://s3.amazonaws.com/all_widgets/widget.js';
+  var fs = document.getElementsByTagName('script')[0];
+  fs.parentNode.insertBefore(ns, fs);
+})();
+</script>
+
+
+</body>
+</html>

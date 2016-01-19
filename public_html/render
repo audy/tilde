@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'erb'
+
+print ERB.new(File.read(ARGV[0])).result

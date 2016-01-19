@@ -1,0 +1,40 @@
+<html>
+  <head>
+
+    <title>rectangles!</title>
+
+    <style type='text/css'>
+    </style>
+
+  </head>
+  <body>
+
+  <canvas id='game' width=1024 height=768>
+  </canvas>
+
+  <script type='text/javascript'>
+
+    function getRndColor() {
+        var r = 255*Math.random()|0,
+            g = 255*Math.random()|0,
+            b = 255*Math.random()|0;
+        return 'rgb(' + r + ',' + g + ',' + b + ')';
+    }
+
+    canvas = document.getElementById('game')
+    context = canvas.getContext('2d');
+
+    setInterval(function(x) {
+      context.fillStyle = getRndColor();
+      context.fillRect(
+        Math.floor(Math.random() * canvas.width + 1 ),
+        Math.floor(Math.random() * canvas.height + 1),
+        Math.floor(Math.random() * 50 + 1),
+        Math.floor(Math.random() * 50 + 1)
+      );
+    }, 1);
+
+  </script>
+
+  </body>
+</html>

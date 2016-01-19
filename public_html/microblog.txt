@@ -1,0 +1,83 @@
+## Wed Sep 16 00:34:21 UTC 2015
+
+- Booked places to stay for our (SO, cat and I)'s move across the
+  country.
+
+## Fri Sep 11 15:46:36 UTC 2015
+
+- Have some <a href="http://tilde.town/~audy/rectangles.html">rectangles</a>!
+
+## Thu Jan 22 00:34:28 UTC 2015
+
+- Got a <a href="http://tilde.town/~audy/search/">working demo</a> of a tilde
+  search engine up and running. For now, it only crawls tilde.town but I am planning to add other tildes soon.
+
+## Tue Jan 20 18:14:56 UTC 2015
+
+Tilde Idea Time!!
+
+- ~karlen reminded me of this one: setup a tilde where all users have to run
+  programs using PBS/qsub (queue system designed for university compute clusters).
+
+- A tilde where you need at least a 32768-bit RSA key to join (takes 4 hours to
+  generate on a laptop). Sign-up process is automated: just SSH in the first time
+  and your account is created. Having to generate huge keys will limit signups.
+
+  (there should be no noticeable performance hit due to large keys).
+
+  ps -- if you want to generate a huge SSH key:
+
+  `ssh-keygen -t rsa -b 32768 -f ~/.ssh/hugekey`
+
+## Fri Jan  2 04:41:56 UTC 2015
+
+- Wrote a small BASH script that puts random unicode smiley faces. I `chmod 777`'d
+  it so feel free to contribute: /home/audy/Code/smiles. (╯°□°）╯︵ ┻━┻. The script
+  also appends $1 to the end of the smiley thing so you can do `smiles hello` and get:
+  (╯°□°）╯︵ ┻━┻ hello
+
+- usercounts.txt has the # of uniq logged in users by minute. I was going to
+  plot this but someone beat me to the punch.
+
+## Sun Dec 28 23:42:19 UTC 2014
+
+It was never my intention to make this a blog about tilde-related things but:
+
+1. Host a tilde on an old jailbroken iPhone. Display the iPhone in a gallery with
+   `htop` running on its screen.
+
+## Wed Dec 17 15:26:23 UTC 2014
+
+Tilde ideas:
+
+1. Host a tilde-style server in a remote location. I found a [list of "exotic"
+   VPS providers](https://www.exoticvps.com). It would be laggy which would add to
+   the fun.
+
+2. Create a tilde with zero net access except for SSH. Any data would have to be
+   pushed in through SSH. Users' websites would only be visible via lynx running on
+   the tilde server (or again, through an SSH tunnel).
+
+3. In addition to (2), users could create tunnels to other nodes in the tildeverse.
+   Perhaps a virtual private network could be created linking tildes.
+
+## Wed Dec 17 00:10:49 UTC 2014
+
+- Wrote a small script that crawls everyone's $HOME looking for
+  directories in ~Code with the goal of facilitating a directory of
+  everyone's projects/one-off-perl-scripts.
+
+  See <a href="http://tilde.town/~audy/code.html">here</a>.
+
+- I realized that the guestbook system on this page might actually be the
+  "microblog." It wouldn't be difficult to implement a "twitter" using
+  a very small shell script.
+
+## Thu Dec 11 21:35:19 UTC 2014
+
+Tilde ideas
+
+- Build a search engine for tilde sites. Bonus points if it works in static
+  html.
+- Add a friends.json file to your ~/public_html, then have a bot crawl it and
+  build a social graph.

@@ -1,0 +1,113 @@
+---
+guests:
+- !ruby/struct:GuestBookEntry
+  name: !binary |-
+    QXVkeQ==
+  message: !binary |-
+    VGVzdGluZyE=
+  date: 2014-12-06 16:14:23.274484647 +00:00
+- !ruby/struct:GuestBookEntry
+  name: !binary |-
+    QXVkeQ==
+  message: !binary |-
+    dGVzdGluZyBhZ2FpbiA6Mw==
+  date: 2014-12-06 16:38:57.286320275 +00:00
+- !ruby/struct:GuestBookEntry
+  name: !binary |-
+    fmtj
+  message: !binary |-
+    VGhhdCdzIGEgZnVuIGdpZiEgOkQ=
+  date: 2014-12-06 16:41:04.990317936 +00:00
+- !ruby/struct:GuestBookEntry
+  name: !binary |-
+    fnJrbGV0dA==
+  message: !binary |-
+    VGhpcyBpcyBhIG5pZnR5IHdheSB0byBpbXBsZW1lbnQgYSBndWVzdGJvb2sg
+    ZmVhdHVyZS4gTXVjaCBwcm9wcy4=
+  date: 2014-12-06 17:03:41.646502442 +00:00
+- !ruby/struct:GuestBookEntry
+  name: !binary |-
+    c2hhcnA=
+  message: !binary |-
+    SGkgZXZlcnlvbmUh
+  date: 2014-12-06 18:16:44.975033900 +00:00
+- !ruby/struct:GuestBookEntry
+  name: !binary |-
+    ZGFu
+  message: !binary |-
+    QmVzdCBndWVzdGJvb2sgZXZlciEgPGI+TklDRSBXT1JLPC9iPg==
+  date: 2014-12-08 01:12:49.966688898 +00:00
+- !ruby/struct:GuestBookEntry
+  name: !binary |-
+    fnVt
+  message: !binary |-
+    IldpbGwgeW91ciBhbnN3ZXIgdG8gdGhpcyBxdWVzdGlvbiBiZSAnbm8nPyI=
+  date: 2014-12-08 18:46:54.890742894 +00:00
+- !ruby/struct:GuestBookEntry
+  name: !binary |-
+    a2FybGVu
+  message: !binary |-
+    dGhpcyBpcyBzdWNoIGEgY29vbCBpZGVhISBjb21tZW50cyBvbiB0aGUgaW50
+    ZXJuZXQgYXJlIG15IGZhdm91cml0ZSE=
+  date: 2014-12-08 18:53:58.711339275 +00:00
+- !ruby/struct:GuestBookEntry
+  name: !binary |-
+    fmF1ZHk=
+  message: !binary |-
+    fmthcmxlbiBzYXJjYXNtPyA6KQ==
+  date: 2014-12-17 00:13:22.951551836 +00:00
+- !ruby/struct:GuestBookEntry
+  name: !binary |-
+    a2FybGVu
+  message: !binary |-
+    bm8hIE9idmlvdXNseSBzb21lb25lIHdyaXRpbmcgbG9scyBvciB0b3Aga2Vr
+    IGlzbid0IGdyZWF0IGJ1dCBzb21lIG9mIHRoZSBiZXN0IHRoaW5ncyBJIGhh
+    dmUgcmVhZCBhcmUgY29tbWVudHM=
+  date: 2014-12-17 10:21:30.326187652 +00:00
+- !ruby/struct:GuestBookEntry
+  name: !binary |-
+    cmVwcGFyZA==
+  message: !binary |-
+    VGhlIHJhaW4gZmFsbHMgaGFyZCBvbiBhIGh1bWRydW0gdG93bi4gIFRoaXMg
+    dG93biBoYWQgZHJhZ2dlZCB5b3UgZG93bi4=
+  date: 2014-12-18 16:09:56.385951343 +00:00
+- !ruby/struct:GuestBookEntry
+  name: !binary |-
+    YW5vdmFr
+  message: !binary |-
+    SGVsbG8geWVzIEkgYW0gYSBndWVzdCBzaWduaW5nIHlvdXIgYm9vay4=
+  date: 2014-12-20 22:59:56.822439546 +00:00
+- !ruby/struct:GuestBookEntry
+  name: !binary |-
+    fmVuZG9ycGhhbnQ=
+  message: !binary |-
+    dGhpcyBwYWdlIGhhcyBsb29rZWQgbG9uZWx5IGJ1dCBpIGxpa2UgdGhpcyBn
+    dWVzdGJvb2sgYW5kIHdhbnRlZCB0byBzYXkgaGVsbG8gYW5kIHRoYW5rIHlv
+    dSBmb3IgbWFraW5nIGl0
+  date: 2015-01-23 02:39:08.783404081 +00:00
+- !ruby/struct:GuestBookEntry
+  name: !binary |-
+    fnNsMmM=
+  message: !binary |-
+    b2ggbWFuLCBhIGd1ZXN0Ym9vaywgdGhpcyBpcyBhd2Vzb21lIDoz
+  date: 2015-01-23 10:01:46.791037723 +00:00
+- !ruby/struct:GuestBookEntry
+  name: !binary |-
+    cmVwcGFyZA==
+  message: !binary |-
+    V2h5IHUgbm8gc2lnbiB0aGUgZ3Vlc3Rib29rPz8h
+  date: 2015-07-21 01:56:41.994485660 +00:00
+- !ruby/struct:GuestBookEntry
+  name: !binary |-
+    c2FucXVp
+  message: !binary |-
+    aGV5byEgIEkgTE9WRSB0aGVzZSBndWVzdGJvb2sgc2NyaXB0cyBvaCBnb29k
+    eSE=
+  date: 2015-07-28 16:11:39.930570607 +00:00
+- !ruby/struct:GuestBookEntry
+  name: !binary |-
+    Z29hdA==
+  message: !binary |-
+    SGVsbG8sIGd1ZXN0Ym9vayEgSSBhbG1vc3QgcHV0IG15IG1lc3NhZ2UgaW4g
+    dGhlIG5hbWUgc3BvdC4=
+  date: 2015-08-20 01:27:04.075332349 +00:00
