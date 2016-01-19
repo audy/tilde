@@ -1,11 +1,13 @@
 # tilde
 
-Things related to [http://tilde.town](tilde.town)
+Things related to [tilde.town](http://tilde.town)
+
+## SUBDIRECTORIES
 
 - `tilde-search`: tilde search engine built with node.js, html and elastic search.
 - `public_html`: contents of my public HTML directory
 
----
+## LICENSE
 
 The MIT License (MIT)
 Copyright (c) 2015 Austin Davis-Richardson
