@@ -2,11 +2,23 @@
 <html>
   <head>
     <title>~search</title>
+    <style type='text/css'>
+      .container {
+        width: 640px;
+        margin: 50px auto;
+      }
+			.result-link {
+				color: tomato;
+			}
+    </style>
   </head>
   <body ng-app="SearchApp">
 
     <div ng-controller="SearchController" class="container">
-      <h2>~ crawler</h2>
+			<h2>
+        ~ crawler
+      </h2>
+      <p>A tilde.town search engine</p>
 
       <form novalidate class="search-form" ng-submit="search(query)">
         <input type="text" ng-model="query">
@@ -23,10 +35,20 @@
         </div>
         <ol>
           <div ng-repeat="hit in resp.hits.hits" class="panel-body">
-            <li><a ng-href="{{hit._source.uri}}">{{hit._source.title }}</a></li>
+            <li>
+              <span>{{ hit._source.title }}</span>
+              <a ng-href="{{hit._source.uri}}" class="result-link">{{ hit._source.uri }}</a>
+            </li>
           </div>
         </ol>
       </div>
+
+      <hr/>
+
+      <small>
+        <a href="https://github.com/audy/tilde/tree/master/tilde-search">Source Code</a>
+				🕷🕷🕷
+      </small>
 
       <!-- include bower components in proper order -->
       <script src="bower_components/angular/angular.js"></script>
@@ -64,6 +86,5 @@
       </script>
 
     </div>
-
   </body>
 </html>
