@@ -16,9 +16,11 @@ var client = new elasticsearch.Client({
   host: "https://evcufwhlri:ogu3ru8vwz@tilde-3814253334.us-east-1.bonsai.io"
 });
 
+var seen = new Set([]);
+
 // todo: this should actually *use* the bulk part of the bulk API
 es_insert = function(uri, title, body) {
-  console.log('inserting: '.blue + title);
+  console.log('inserting: '.blue + uri);
   client.create({
     index: 'tildes',
     type: 'page',
@@ -34,32 +36,36 @@ es_insert = function(uri, title, body) {
 }
 
 crawl_page = function(error, result, $) {
-  console.log('crawling: '.white + result.uri);
 
-  var title = $('title').text();
-  var body = S($('body').html()).stripTags().s;
+  if (seen.has(result.uri)) {
+    console.log('skipping: '.grey + result.uri);
+  } else {
+    seen.add(result.uri)
+    console.log('crawling: '.white + result.uri);
+    var title = $('title').text();
+    var body = S($('body').html()).stripTags().s;
 
-  es_insert(result.uri, title, body);
+    es_insert(result.uri, title, body);
 
-  // find links, add to queue
-  $('a').each(function(index, a) {
+    // find links, add to queue
+    $('a').each(function(index, a) {
 
-    var new_url = $(a).attr("href");
+      var new_url = $(a).attr("href");
 
-   // we only care about tilde.town for now
-   if (new_url.match(/http:\/\/tilde\.town/)) {
-      c.queue(new_url);
-      console.log('queuing: '.green + new_url);
-    }
-
-  });
+     // we only care about tilde.town for now
+     if (new_url.match(/https?:\/\/tilde\.town/) && !seen.has(new_url)) {
+        c.queue(new_url);
+        console.log('queuing: '.green + new_url);
+      }
+    });
+  }
 }
 
 
 // das web-crawler
 var c = new Crawler({
-  maxConnections: 10,
-  rateLimits: 100, // let's take it slow
+  maxConnections: 1,
+  rateLimits: 500, // let's take it slow
   cache: true,
   callback: function(a, b, c) {
     try {
